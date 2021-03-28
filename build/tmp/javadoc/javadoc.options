@@ -1,8 +1,0 @@
--classpath 'C:\\Users\\Moussaab\\Desktop\\TP6\\build\\classes\\java\\main;C:\\Users\\Moussaab\\Desktop\\TP6\\build\\resources\\main'
--d 'C:\\Users\\Moussaab\\Desktop\\TP6\\build\\docs\\javadoc'
--doctitle 'TP6 1.0 API'
--quiet 
--windowtitle 'TP6 1.0 API'
-'C:\\Users\\Moussaab\\Desktop\\TP6\\src\\main\\java\\com\\example\\exception\\NoSquareException.java'
-'C:\\Users\\Moussaab\\Desktop\\TP6\\src\\main\\java\\com\\example\\model\\Matrix.java'
-'C:\\Users\\Moussaab\\Desktop\\TP6\\src\\main\\java\\com\\example\\service\\MatrixMathematics.java'
