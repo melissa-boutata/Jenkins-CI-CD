@@ -12,7 +12,7 @@ pipeline {
 
     stage('Mail Notification') {
       steps {
-        emailext(subject: 'Build notification', body: 'Success or Failure', from: 'hm_boutata@esi.dz', to: 'hi_hamdine@esi.dz')
+        emailext(subject: 'Build notification', body: 'Success or Failure', from: 'hm_boutata@esi.dz', to: 'hm_boutata@esi.dz')
       }
     }
 
