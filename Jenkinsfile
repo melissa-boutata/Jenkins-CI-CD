@@ -24,7 +24,6 @@ pipeline {
               powershell 'C:\\\\gradle-5.6-bin\\\\gradle-5.6\\\\bin\\\\gradle sonarqube'
             }
 
-            waitForQualityGate true
           }
         }
 
@@ -39,7 +38,7 @@ pipeline {
 
     stage('Deployment') {
       steps {
-        bat 'C:\\\\gradle-5.6-bin\\\\gradle-5.6\\\\bin\\\\gradle publish'
+        powershell 'C:\\\\gradle-5.6-bin\\\\gradle-5.6\\\\bin\\\\gradle publish'
       }
     }
 
