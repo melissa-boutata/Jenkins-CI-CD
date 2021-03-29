@@ -60,6 +60,5 @@ pipeline {
         slackSend(baseUrl: 'https://hooks.slack.com/services/', token: 'T01MQLBV9BK/B01SN9TD8UB/d5Savm0klMv69g5lVdks0bvy', channel: 'general', message: 'API Deployee', teamDomain: 'TP Gradle2021')
       }
     }
-
   }
 }
