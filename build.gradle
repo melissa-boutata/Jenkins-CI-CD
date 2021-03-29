@@ -10,6 +10,14 @@ version '1.0'
 
 repositories {
     mavenCentral()
+
+	maven {
+            url 'https://mymavenrepo.com/repo/R0HAVrHBipSUZtxKdCGE/'
+            credentials {
+                username 'myMavenRepo'
+                password 'OGL2021'
+            }
+        }
 }
 
 dependencies {
@@ -22,11 +30,9 @@ dependencies {
     outputDir = file('build/reports/cucumber')
     buildId = '0'
     reports = files('reports/example-report.json')
-}
-
-project.tasks["sonarqube"].dependsOn "test"
-
-task generateMatrixAPI{
+}*/
+//project.tasks["sonarqube"].dependsOn "test"
+/*task generateMatrixAPI{
     copy{
         from 'build/reports'
         into 'reports'
@@ -42,10 +48,17 @@ task generateMatrixAPI{
         into 'libs'
         into 'C:/Users/Moussaab/Desktop/TP6/MatrixRelease/Matrix_v_1.0/libs'
     }
-}
-project.tasks["generateMatrixAPI"].dependsOn "build"
-project.tasks["generateMatrixAPI"].dependsOn "javadoc"*/
+}*/
+//project.tasks["generateMatrixAPI"].dependsOn "build"
+//project.tasks["generateMatrixAPI"].dependsOn "javadoc"
 
+apply plugin: 'maven-publish'
+group = 'com.example'
+version = '0.1'
+
+dependencies {
+    implementation 'junit:junit:4.12'
+}
 publishing {
     repositories {
         maven {
@@ -70,5 +83,5 @@ slack {
     message {
         text = "Project is built newly and deployed"
     }
-}
-project.tasks["publishToSlack"].dependsOn "publish"*/
+}*/
+//project.tasks["publishToSlack"].dependsOn "publish"
