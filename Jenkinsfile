@@ -4,7 +4,7 @@ pipeline {
     stage('build') {
       steps {
         bat 'C:\\\\gradle-5.6-bin\\\\gradle-5.6\\\\bin\\\\gradle build'
-        powershell 'gradle javadoc'
+        bat 'C:\\\\gradle-5.6-bin\\\\gradle-5.6\\\\bin\\\\gradle javadoc'
         archiveArtifacts 'build/libs/*.jar'
         archiveArtifacts 'build/docs/javadoc/*'
       }
@@ -21,7 +21,7 @@ pipeline {
         stage('Code Analysis') {
           steps {
             withSonarQubeEnv('sonar') {
-              powershell 'C:\\gradle-5.6-bin\\gradle-5.6\\bin\\gradle sonarqube'
+              bat 'C:\\\\gradle-5.6-bin\\\\gradle-5.6\\\\bin\\\\gradle sonarqube'
             }
 
           }
@@ -38,7 +38,7 @@ pipeline {
 
     stage('Deployment') {
       steps {
-        powershell 'C:\\gradle-5.6-bin\\gradle-5.6\\bin\\gradle publish'
+        bat 'C:\\\\gradle-5.6-bin\\\\gradle-5.6\\\\bin\\\\gradle publish'
       }
     }
 
