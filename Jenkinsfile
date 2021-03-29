@@ -16,5 +16,26 @@ pipeline {
       }
     }
 
+    stage('Code Analysis') {
+      parallel {
+        stage('Code Analysis') {
+          steps {
+            withSonarQubeEnv('sonar') {
+              powershell 'C:\\gradle-5.6-bin\\gradle-5.6\\bin\\gradle sonarqube'
+            }
+
+            waitForQualityGate true
+          }
+        }
+
+        stage('Test Reporting') {
+          steps {
+            cucumber '**/*.json'
+          }
+        }
+
+      }
+    }
+
   }
 }
