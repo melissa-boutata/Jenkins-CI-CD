@@ -24,7 +24,6 @@ pipeline {
               powershell 'C:\\\\gradle-5.6-bin\\\\gradle-5.6\\\\bin\\\\gradle sonarqube'
             }
 
-            waitForQualityGate true
           }
         }
 
