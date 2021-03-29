@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        powershell 'gradle build'
+        bat 'C:\\\\gradle-5.6-bin\\\\gradle-5.6\\\\bin\\\\gradle build'
         powershell 'gradle javadoc'
         archiveArtifacts 'build/libs/*.jar'
         archiveArtifacts 'build/docs/javadoc/*'
