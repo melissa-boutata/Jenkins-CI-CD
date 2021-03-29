@@ -2,6 +2,22 @@ pipeline {
   agent any
   stages {
     stage('build') {
+      post {
+        failure {
+          script {
+            message="Build failed"
+          }
+
+        }
+
+        success {
+          script {
+            message="Build succeeded"
+          }
+
+        }
+
+      }
       steps {
         bat 'C:\\\\gradle-5.6-bin\\\\gradle-5.6\\\\bin\\\\gradle build'
         bat 'C:\\\\gradle-5.6-bin\\\\gradle-5.6\\\\bin\\\\gradle javadoc'
@@ -13,7 +29,7 @@ pipeline {
 
     stage('Mail Notification') {
       steps {
-        mail(subject: 'Build notification', body: 'Success or Failure', from: 'hm_boutata@esi.dz', to: 'hi_hamdine@esi.dz')
+        mail(subject: 'Build notification', body: "${message}", from: 'hm_boutata@esi.dz', to: 'hi_hamdine@esi.dz')
       }
     }
 
