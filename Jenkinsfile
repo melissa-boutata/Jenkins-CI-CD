@@ -7,16 +7,12 @@ pipeline {
           script {
             message="Build failed"
           }
-
         }
-
         success {
           script {
             message="Build succeeded"
           }
-
         }
-
       }
       steps {
         bat 'C:\\\\gradle-5.6-bin\\\\gradle-5.6\\\\bin\\\\gradle build'
